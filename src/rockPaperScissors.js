@@ -17,6 +17,18 @@
  *   rockPaperScissors(4); // => [['rock', 'rock', 'rock', 'rock'], etc...]
  */
 
-const rockPaperScissors = () => {
-  // Your code here
+const rockPaperScissors = (n) => {
+  const hands = [];
+  const rps = ['rock', 'paper', 'scissors'];
+
+  function recurse() {
+    if (1) {
+
+    } else {
+
+    }
+  }
+
+  recurse(n);
+  return hands;
 };

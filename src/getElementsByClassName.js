@@ -9,7 +9,20 @@
 
   But we don't like easy! So we'll make you write your own.
 */
+const getElementsByClassName = (className) => {
+  const results = [];
+  var g = new RegExp(className, g);
 
-const getElementsByClassName = () => {
-  // YOUR CODE HERE
-};
+  function traverse(node = document.body) {
+    if (g.test(node.className)) {
+      results.push(node);
+    }
+
+    for (let i = 0; i < node.childNodes.length; i++) {
+      traverse(node.childNodes[i]);
+    }
+  }
+
+  traverse();
+  return results;
+}

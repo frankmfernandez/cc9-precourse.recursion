@@ -16,6 +16,8 @@ const stringifyJSON = (x) => {
     return 'null';
   if (typeof x === 'string')
     return `"${x}"`;
+  if (x instanceof Date)
+    return stringifyJSON(x.toJSON());
   if (typeof x === 'object' && x.constructor === Object) {
     for (let key in x) {
       let keyStr = stringifyJSON(key);

@@ -44,14 +44,4 @@ const treeSearcher = (tree, target) => {
         }
     }
     return 'NULL';
-    /*
-    for (let key in tree) {
-        console.log(`Key: ${key} & Value: ${tree[key]}`);
-        console.log(Object.keys(tree[key]).length);
-    }
-    */
 }
-
-//console.log(treeSearcher(tree, 'Apple'));
-console.log(JSON.stringify(tree, null, 2));
-console.log(treeSearcher(tree, 'Apple'));

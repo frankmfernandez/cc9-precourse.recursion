@@ -21,5 +21,3 @@ let testData = [
     {name: 7, parent: 'odds'},
     {name: 9, parent: 'odds'}
 ];
-
-console.log(JSON.stringify(treeMaker(testData, null), null, 2));

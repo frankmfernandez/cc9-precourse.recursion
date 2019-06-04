@@ -16,3 +16,5 @@ var testArray = [];
 for (let i = 0; i < 10000000; i++) {
     testArray.push(i);
 }
+
+binarySearch(testArray, 972000);

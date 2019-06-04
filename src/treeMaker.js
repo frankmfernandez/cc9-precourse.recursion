@@ -21,3 +21,5 @@ let testData = [
     {name: 7, parent: 'odds'},
     {name: 9, parent: 'odds'}
 ];
+
+treeMaker(testData, null);

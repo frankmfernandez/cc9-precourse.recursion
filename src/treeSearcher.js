@@ -45,3 +45,5 @@ const treeSearcher = (tree, target) => {
     }
     return 'NULL';
 }
+
+treeSearcher(tree, 'Apple');

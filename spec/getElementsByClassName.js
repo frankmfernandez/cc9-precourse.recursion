@@ -21,9 +21,9 @@ describe("getElementsByClassName", () => {
     body.classList.add("targetClassName");
   });
 
-  afterEach(() => {
-    body.classList.remove("targetClassName");
-  });
+  // afterEach(() => {
+  //   body.classList.remove("targetClassName");
+  // });
 
   for (let i = 0; i < htmlStrings.length; i++) {
     testHTMLStrings(htmlStrings[i], i);
@@ -43,7 +43,7 @@ describe("getElementsByClassName", () => {
         );
         let expectedArray = Array.prototype.slice.apply(expectedNodeList);
         expect(result).toEqual(expectedArray);
-        body.removeChild($rootElement);
+        // body.removeChild($rootElement);
       }
     );
   }

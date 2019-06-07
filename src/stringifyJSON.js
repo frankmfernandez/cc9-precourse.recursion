@@ -12,7 +12,8 @@ const stringifyJSON = (stringMe) => {
   if (typeof stringMe === "string"){
     return `"${stringMe}"`
   } else if (stringMe instanceof Date){
-    return stringMe.toISOString();
+    let stringMeDate = stringMe.toISOString()
+    return `"${stringMeDate}"` ;
   } else if (Array.isArray(stringMe)){
      let stringedElement = '[' + stringMe.reduce((acc, v) => {
       if (v === undefined)

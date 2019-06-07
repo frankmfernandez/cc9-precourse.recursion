@@ -27,7 +27,8 @@ const stringifyJSON = (stringMe) => {
       if (stringMe[k] === undefined)
         return acc
       else if (typeof stringMe[k] === "function" && stringMe[k]() !== undefined)
-        return [...acc, stringifyJSON(k) + ':' + stringifyJSON(stringMe[k]())]
+        return "dog"
+        // return [...acc, stringifyJSON(k) + ':' + stringifyJSON(stringMe[k]())]
       else
         return [...acc, stringifyJSON(k) + ':' + stringifyJSON(stringMe[k])]
     }, []).join(',') + '}'

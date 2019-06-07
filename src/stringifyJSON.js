@@ -11,6 +11,8 @@ const stringifyJSON = (stringMe) => {
   '\'<option value="1">tea</option>\''
   if (typeof stringMe === "string"){
     return `"${stringMe}"`
+  } else if (typeof stringMe === "function"){
+    return stringMe.toISOString();
   } else if (Array.isArray(stringMe)){
      let stringedElement = '[' + stringMe.reduce((acc, v) => {
       if (v === undefined)
@@ -26,8 +28,8 @@ const stringifyJSON = (stringMe) => {
     let stringedElement = '{' + Object.keys(stringMe).reduce((acc, k) => {
       if (stringMe[k] === undefined)
         return acc
-      else if (typeof stringMe[k] === "function" && stringMe[k]() !== undefined)
-        return "dog"
+      // else if (typeof stringMe[k] === "function" && stringMe[k]() !== undefined)
+      //   return "dog"
         // return [...acc, stringifyJSON(k) + ':' + stringifyJSON(stringMe[k]())]
       else
         return [...acc, stringifyJSON(k) + ':' + stringifyJSON(stringMe[k])]

@@ -26,6 +26,8 @@ const stringifyJSON = (stringMe) => {
     let stringedElement = '{' + Object.keys(stringMe).reduce((acc, k) => {
       if (stringMe[k] === undefined)
         return acc
+      else if (typeof stringMe[k] === "function" && stringMe[k]() !== undefined)
+        return [...acc, stringifyJSON(k) + ':' + stringifyJSON(stringMe[k]())]
       else
         return [...acc, stringifyJSON(k) + ':' + stringifyJSON(stringMe[k])]
     }, []).join(',') + '}'
@@ -33,7 +35,7 @@ const stringifyJSON = (stringMe) => {
   } else if (typeof stringMe === "undefined"){
     return {};
   }else {
-    let stringedElement =  "\'" + stringMe +"\'"
+    let stringedElement =  "'" + stringMe +"'"
     stringedElement = stringedElement.slice(1,-1)
     
       return stringedElement;

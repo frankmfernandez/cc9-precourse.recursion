@@ -11,7 +11,7 @@ const stringifyJSON = (stringMe) => {
   '\'<option value="1">tea</option>\''
   if (typeof stringMe === "string"){
     return `"${stringMe}"`
-  } else if (typeof stringMe === "function"){
+  } else if (stringMe instanceof Date){
     return stringMe.toISOString();
   } else if (Array.isArray(stringMe)){
      let stringedElement = '[' + stringMe.reduce((acc, v) => {
